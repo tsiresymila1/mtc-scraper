@@ -34,6 +34,15 @@ test("key order matches the target file", () => {
   assert.deepEqual(keys(p(actual).races[0].runners[0]), keys(p(expected).races[0].runners[0]));
 });
 
+test("program identity is overridable", () => {
+  const p = toProgram(read("scraped-races.json"), new Date(), { code: "XX1", name: "XX", longName: "Some Track" })
+    .programs["Horse Racing"].Mauritius[0];
+  assert.deepEqual(
+    [p.progCode, p.progName, p.progShortName, p.progLongName],
+    ["XX1", "XX", "XX", "Some Track"],
+  );
+});
+
 test("rejects empty input", () => {
   assert.throws(() => toProgram([]));
 });

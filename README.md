@@ -16,17 +16,21 @@ out/              generated output (gitignored)
 
 ```sh
 npm install
-npm run scrape -- [url ...] [-f urls.txt] [-e cloak|clearcote|camoufox] [-o out/races.json]   # urls.txt: one url per line, "#" comments
+npm run scrape -- [url ...] [-f urls.txt] [-n fixture] [--races 6] [-e cloak|clearcote|camoufox] [--license-key KEY] [--prog-code CDM10] [--prog-name CDM] [--prog-long-name "Champ De Mars"] [-o out/races.json]   # urls.txt: one url per line, "#" comments
 npm test
 npm run typecheck
 ```
+
+Without any url, the script scrapes every race of a fixture: `-n 399` is the fixture id in `/form-guide/fixtures/<id>/R<n>` (default 399) and `--races 6` the number of races (R1..R6). Explicit urls (arguments or `-f`) ignore both. The meeting identity in the output is `--prog-code` (`CDM10`), `--prog-name` (`CDM`, also used as `progShortName`) and `--prog-long-name` (`Champ De Mars`).
+
+Run with **no argument in a terminal** (or double-click the binary) and it asks engine, license key (cloak only), fixture, number of races and the three `prog*` values, with the default in brackets: Enter keeps it. Any argument turns the questions off.
 
 Engines (`-e clearcote|cloak|camoufox`, default `clearcote`):
 - `cloak`: CloakBrowser, needs a license key.
 - `clearcote`: open build needs no key; downloads its binary (+ ~52 MB geoip db) on first run.
 - `camoufox`: Firefox-based; run `npx camoufox-js fetch` once. `playwright-core` is pinned to 1.62.x (camoufox-js peer range).
 
-Output (`out/races.json`): one "program" object, shape of `test/fixtures/expected-program.json`, built by `src/format.ts` (races sorted by their `/R<n>` URL suffix, `fileDT` in Mauritius time). Choices the sample does not settle: scratched runners stay in the list with `runnerStatus: "SCRATCHED"` (the sample only has `OPEN`), `odds.Place` is always `9999`, `odds.Win` is the scraped price or `9999`, `progCode`/`runnerOwner` are constants. Nothing is written when no race could be scraped.
+Output (`out/races.json`): one "program" object, shape of `test/fixtures/expected-program.json`, built by `src/format.ts` (races sorted by their `/R<n>` URL suffix, `fileDT` in Mauritius time). Choices the sample does not settle: scratched runners stay in the list with `runnerStatus: "SCRATCHED"` (the sample only has `OPEN`), `odds.Place` is always `9999`, `odds.Win` is the scraped price or `9999`, `runnerOwner` is a constant. Nothing is written when no race could be scraped.
 
 Pages are waited on until `tr.runner_row` appears (up to 30 s), so a Cloudflare challenge can resolve itself.
 

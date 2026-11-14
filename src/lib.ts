@@ -1,10 +1,10 @@
-export const DEFAULT_URL = "https://www.mtcjockeyclub.com/form-guide/fixtures/399/R1";
+export const DEFAULT_FIXTURE = 399;
+export const DEFAULT_RACES = 6;
 
-export const URLS = [
-  "https://www.mtcjockeyclub.com/form-guide/fixtures/399/R1",
-  "https://www.mtcjockeyclub.com/form-guide/fixtures/399/R2",
-  "https://www.mtcjockeyclub.com/form-guide/fixtures/399/R3",
-  "https://www.mtcjockeyclub.com/form-guide/fixtures/399/R4",
-  "https://www.mtcjockeyclub.com/form-guide/fixtures/399/R5",
-  "https://www.mtcjockeyclub.com/form-guide/fixtures/399/R6"
-]
+// All races of a fixture: .../fixtures/<fixture>/R1 ... R<races>
+export const fixtureUrls = (fixture = DEFAULT_FIXTURE, races = DEFAULT_RACES) =>
+  Array.from(
+    { length: races },
+    (_, i) => `https://www.mtcjockeyclub.com/form-guide/fixtures/${fixture}/R${i + 1}`,
+  );
+

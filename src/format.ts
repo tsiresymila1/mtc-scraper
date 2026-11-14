@@ -7,15 +7,9 @@ export type ScrapedRace = Race & { url: string };
 const MONTHS = ["JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE", "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER"];
 const NO_ODDS = 9999; // placeholder used by the format when there is no price
 
-// ponytail: constants of the one meeting we scrape (Champ de Mars); make them config if other tracks are added
-const PROGRAM = {
-  progCmty: "MTCJC",
-  progCode: "CDM10",
-  progNum: 1,
-  progName: "CDM",
-  progShortName: "CDM",
-  progLongName: "Champ De Mars",
-};
+// The meeting's identity in the output; defaults are Champ de Mars, overridable from the CLI.
+export type ProgramInfo = { code: string; name: string; longName: string };
+export const DEFAULT_PROGRAM: ProgramInfo = { code: "CDM10", name: "CDM", longName: "Champ De Mars" };
 
 // "SATURDAY 14 NOVEMBER 2026" -> { y: "2026", m: "11", d: "14" }
 function parseDate(date: string | null) {
@@ -51,7 +45,7 @@ function toRunner(r: Runner) {
   };
 }
 
-export function toProgram(scraped: ScrapedRace[], now = new Date()) {
+export function toProgram(scraped: ScrapedRace[], now = new Date(), program = DEFAULT_PROGRAM) {
   if (!scraped.length) throw new Error("No race to format");
   const date = parseDate(scraped[0].date);
   const races = scraped
@@ -80,7 +74,12 @@ export function toProgram(scraped: ScrapedRace[], now = new Date()) {
       "Horse Racing": {
         Mauritius: [
           {
-            ...PROGRAM,
+            progCmty: "MTCJC",
+            progCode: program.code,
+            progNum: 1,
+            progName: program.name,
+            progShortName: program.name,
+            progLongName: program.longName,
             progDate: `${date.d}/${date.m}`,
             progCountryCode: "MU",
             progCountryName: "MU",
