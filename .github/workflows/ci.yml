@@ -35,6 +35,18 @@ jobs:
       - uses: oven-sh/setup-bun@v2
       - run: npm ci
       - run: npm run build
+      - name: Smoke test (binary must not depend on node_modules or build-machine paths)
+        run: |
+          chmod +x dist/mtc-scraper-linux-x64
+          mv node_modules /tmp/node_modules.hidden
+          mkdir /tmp/smoke && cd /tmp/smoke
+          for engine in clearcote camoufox; do
+            out=$("$GITHUB_WORKSPACE/dist/mtc-scraper-linux-x64" -e "$engine" https://example.com 2>&1 || true)
+            echo "== $engine"; echo "$out" | tail -8
+            if echo "$out" | grep -qE "Cannot find module|ENOENT|ERR_MODULE_NOT_FOUND"; then
+              echo "::error::$engine: the binary reads files that only exist on the build machine"; exit 1
+            fi
+          done
       - name: Package
         working-directory: dist
         run: |

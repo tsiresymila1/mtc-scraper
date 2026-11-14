@@ -39,7 +39,7 @@ Targets: `darwin-arm64`, `linux-x64`, `windows-x64.exe` (~100-120 MB each, no No
 
 All three engines work in the binary (verified on macOS arm64 with clearcote and camoufox; cloak only up to license validation, no key available; linux/windows binaries built but not run). How:
 - `chromium-bidi/*` is marked external (playwright BiDi, unused).
-- camoufox-js reads data files next to its code: `src/bin.ts` embeds them and extracts them to `~/.cache/mtc-scraper/camoufox`; `build.ts` patches camoufox-js to read from there.
+- Several dependencies read data files next to their own code, a path that only exists on the build machine: camoufox-js, header-generator and fingerprint-generator (embedded by `src/bin.ts`, extracted to `~/.cache/mtc-scraper/data`, paths patched by `build.ts`) and playwright-core (its `package.json` / `browsers.json` are inlined). Check after any dependency change: build, hide `node_modules`, run the binary from another folder (CI does this for the Linux binary).
 - `impit` (native HTTP client, only used by camoufox geoip to look up the public IP) is replaced at build time by a shim over bun `fetch` (proxy supported), so camoufox `geoip: true` works in the binary (verified on macOS arm64: timezone/locale follow the IP).
 
 Browser binaries are downloaded on first run (camoufox: first launch, or `npx camoufox-js fetch`).

@@ -21,12 +21,45 @@ const camoufoxPatch: BunPlugin = {
       const code = (await Bun.file(path).text())
         .replaceAll(
           'path.join(currentDir, "..", "data-files"',
-          'path.join(globalThis.__CAMOUFOX_ROOT ?? path.join(currentDir, ".."), "data-files"',
+          'path.join(globalThis.__MTC_DATA ? globalThis.__MTC_DATA + "/camoufox" : path.join(currentDir, ".."), "data-files"',
         )
         .replaceAll(
           'path.join(currentDir, "data-files"',
-          'path.join(globalThis.__CAMOUFOX_ROOT ?? currentDir, "data-files"',
+          'path.join((globalThis.__MTC_DATA ? globalThis.__MTC_DATA + "/camoufox" : currentDir), "data-files"',
         );
+      return { contents: code, loader: "js" };
+    });
+  },
+};
+
+// playwright-core reads its own package.json / browsers.json at startup, relative to the
+// __dirname of the *build* machine (a path that does not exist where the binary runs): inline them.
+const playwrightPatch: BunPlugin = {
+  name: "playwright-patch",
+  setup(build) {
+    build.onLoad({ filter: /playwright-core\/lib\/coreBundle\.js$/ }, async ({ path }) => {
+      const root = path.replace(/\/lib\/coreBundle\.js$/, "");
+      let code = await Bun.file(path).text();
+      for (const name of ["package", "browsers"]) {
+        const json = JSON.stringify(await Bun.file(`${root}/${name}.json`).json());
+        code = code.replace(new RegExp(`require\\([\\w$.]+\\.join\\(packageRoot, "${name}\\.json"\\)\\)`, "g"), () => json);
+      }
+      return { contents: code, loader: "js" };
+    });
+  },
+};
+
+// header-generator / fingerprint-generator (used by camoufox-js) read `${__dirname}/data_files/*`:
+// point them at the extracted copy (see src/bin.ts).
+const generatorsPatch: BunPlugin = {
+  name: "generators-patch",
+  setup(build) {
+    build.onLoad({ filter: /node_modules\/(header-generator|fingerprint-generator)\/[^/]+\.js$/ }, async ({ path }) => {
+      const pkg = path.match(/node_modules\/([^/]+)\//)![1];
+      const code = (await Bun.file(path).text()).replaceAll(
+        "${__dirname}/data_files",
+        `\${globalThis.__MTC_DATA}/${pkg}/data_files`,
+      );
       return { contents: code, loader: "js" };
     });
   },
@@ -41,7 +74,7 @@ for (const target of targets) {
     entrypoints: ["src/bin.ts"],
     compile: { target: target as never, outfile },
     external: ["chromium-bidi/*"], // playwright BiDi, unused
-    plugins: [camoufoxPatch],
+    plugins: [camoufoxPatch, playwrightPatch, generatorsPatch],
   });
   console.log(result.success ? `ok   ${target} -> ${outfile}` : `FAIL ${target}`);
   for (const log of result.logs) console.log(String(log));
