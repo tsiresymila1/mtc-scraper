@@ -4,7 +4,7 @@ Scrapes an MTC Jockey Club fixture page into JSON (race info + runners). Node 26
 
 ```
 src/cli.ts        entry: url -> browser -> parse -> JSON
-src/engines.ts    browser engines: cloak (default), clearcote, camoufox
+src/engines.ts    browser engines: clearcote (default), cloak, camoufox
 src/browser.ts    loads pages with the chosen engine, extracts raw strings from the DOM
 src/parse.ts      pure: raw strings -> typed Race JSON (unit-tested)
 src/challenge.ts  Cloudflare challenge detection
@@ -20,7 +20,7 @@ npm test
 npm run typecheck
 ```
 
-Engines (`-e cloak|clearcote|camoufox`, default `cloak`):
+Engines (`-e clearcote|cloak|camoufox`, default `clearcote`):
 - `cloak`: CloakBrowser, needs a license key.
 - `clearcote`: open build needs no key; downloads its binary (+ ~52 MB geoip db) on first run.
 - `camoufox`: Firefox-based; run `npx camoufox-js fetch` once. `playwright-core` is pinned to 1.62.x (camoufox-js peer range).

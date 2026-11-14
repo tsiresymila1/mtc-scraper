@@ -12,7 +12,7 @@ import { parseRace } from "./parse.ts";
 const { positionals, values } = parseArgs({
   options: {
     file: { type: "string", short: "f" }, // text file, one url per line
-    engine: { type: "string", short: "e", default: "cloak" }, // see ENGINES
+    engine: { type: "string", short: "e", default: "clearcote" }, // see ENGINES
     "license-key": { type: "string" }, // cloak / clearcote; default: env var
     output: { type: "string", short: "o", default: "out/races.json" },
     help: { type: "boolean", short: "h" },
