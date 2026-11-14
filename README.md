@@ -6,7 +6,8 @@ Scrapes an MTC Jockey Club fixture page into JSON (race info + runners). Node 26
 src/cli.ts        entry: url -> browser -> parse -> JSON
 src/engines.ts    browser engines: clearcote (default), cloak, camoufox
 src/browser.ts    loads pages with the chosen engine, extracts raw strings from the DOM
-src/parse.ts      pure: raw strings -> typed Race JSON (unit-tested)
+src/parse.ts      pure: raw strings -> typed Race (unit-tested)
+src/format.ts     pure: scraped races -> output JSON (fileDT / sports / programs.Horse Racing.Mauritius[].races[].runners[])
 src/challenge.ts  Cloudflare challenge detection
 src/moli.ts       alternative: Markdown export through the Moli CLI
 test/             node:test unit tests
@@ -24,6 +25,8 @@ Engines (`-e clearcote|cloak|camoufox`, default `clearcote`):
 - `cloak`: CloakBrowser, needs a license key.
 - `clearcote`: open build needs no key; downloads its binary (+ ~52 MB geoip db) on first run.
 - `camoufox`: Firefox-based; run `npx camoufox-js fetch` once. `playwright-core` is pinned to 1.62.x (camoufox-js peer range).
+
+Output (`out/races.json`): one "program" object, shape of `test/fixtures/expected-program.json`, built by `src/format.ts` (races sorted by their `/R<n>` URL suffix, `fileDT` in Mauritius time). Choices the sample does not settle: scratched runners stay in the list with `runnerStatus: "SCRATCHED"` (the sample only has `OPEN`), `odds.Place` is always `9999`, `odds.Win` is the scraped price or `9999`, `progCode`/`runnerOwner` are constants. Nothing is written when no race could be scraped.
 
 Pages are waited on until `tr.runner_row` appears (up to 30 s), so a Cloudflare challenge can resolve itself.
 

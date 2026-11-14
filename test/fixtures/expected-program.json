@@ -1,0 +1,603 @@
+{
+  "fileDT": "2026-11-14 12:30",
+  "sports": [
+    "Horse Racing"
+  ],
+  "programs": {
+    "Horse Racing": {
+      "Mauritius": [
+        {
+          "progCmty": "MTCJC",
+          "progCode": "CDM10",
+          "progNum": 1,
+          "progName": "CDM",
+          "progShortName": "CDM",
+          "progLongName": "Champ De Mars",
+          "progDate": "14/11", 
+          "progCountryCode": "MU",
+          "progCountryName": "MU",
+          "progNumRaces": 6,
+          "progCurrentRace": 0,
+          "progMinToPost": 0,
+          "progSportType": "Horse Racing",
+          "progCurrency": "MU",
+          "progForex": 1,
+          "progMinBetLocal": 5,
+          "progMinBetForeign": 5,
+          "progStatus": "O",
+          "races": [
+            {
+              "raceNum": "1",
+              "raceTitle": "The Foo Kune Family Trophy",
+              "raceDistance": "1450",
+              "raceDate": "20261114",
+              "raceTime": "1305",
+              "raceDT": "2026-11-14 13:05",
+              "raceStatus": "OPEN",
+              "raceNumOfRunners": 6,
+              "runners": [
+                {
+                  "runnerIdx": "1",
+                  "runnerName": "SAN ANDREAS",
+                  "runnerLane": "3",
+                  "runnerJockey": "M NUNES",
+                  "runnerStable": "C HEWITSON",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+                				
+				
+				{
+                  "runnerIdx": "2",
+                  "runnerName": "RIVER HAWK",
+                  "runnerLane": "2",
+                  "runnerJockey": "B SOOFUL",
+                  "runnerStable": "GUJADHUR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				
+				{
+                  "runnerIdx": "3",
+                  "runnerName": "CAPTAIN MARSALA",
+                  "runnerLane": "6",
+                  "runnerJockey": "I TAKA",
+                  "runnerStable": "A SEWDYAL",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "4",
+                  "runnerName": "KAISARISSA",
+                  "runnerLane": "4",
+                  "runnerJockey": "M SONARAM",
+                  "runnerStable": "R GUJADHUR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				
+				
+				{
+                  "runnerIdx": "5",
+                  "runnerName": "HIGH KEY",
+                  "runnerLane": "5",
+                  "runnerJockey": "P C ORFFER",
+                  "runnerStable": "SHIRISH NARANG",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				
+				{
+                  "runnerIdx": "6",
+                  "runnerName": "WILLIAM BLAKE",
+                  "runnerLane": "1",
+                  "runnerJockey": "S RAMA",
+                  "runnerStable": "C DABY",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                }
+				
+				
+              ]
+            },
+            {
+              "raceNum": "2",
+              "raceTitle": "The Canrapen Family Trophy",
+              "raceDistance": "1450",
+              "raceDate": "20261114",
+              "raceTime": "1340",
+              "raceDT": "2026-11-14 13:40",
+              "raceStatus": "OPEN",
+              "raceNumOfRunners": 5,
+              "runners": [
+                
+                {
+                  "runnerIdx": "1",
+                  "runnerName": "LAVA BURST",
+                  "runnerLane": "4",
+                  "runnerJockey": "P C ORFFER",
+                  "runnerStable": "SHIRISH NARANG",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+                {
+                  "runnerIdx": "2",
+                  "runnerName": "ZOOBERI",
+                  "runnerLane": "1",
+                  "runnerJockey": "L JOGAHIR",
+                  "runnerStable": "C DABY",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "3",
+                  "runnerName": "GANG LEADER",
+                  "runnerLane": "3",
+                  "runnerJockey": "R JOORAWON",
+                  "runnerStable": "J AWOTAR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				
+				{
+                  "runnerIdx": "4",
+                  "runnerName": "COSMIC CAPTAIN",
+                  "runnerLane": "5",
+                  "runnerJockey": "M MJOKA",
+                  "runnerStable": "SM MAHADIA",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "5",
+                  "runnerName": "STEPPING OUT",
+                  "runnerLane": "2",
+                  "runnerJockey": "S RAMA",
+                  "runnerStable": "SEWDYAL",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                }
+				
+				
+				
+	
+
+              ]
+            },
+			
+            {
+              "raceNum": "3",
+              "raceTitle": "The Tangavel & Anjaley Ramalingum Memorial Trophy",
+              "raceDistance": "1450",
+              "raceDate": "20261114",
+              "raceTime": "1415",
+              "raceDT": "2026-11-14 14:15",
+              "raceStatus": "OPEN",
+              "raceNumOfRunners": 5,
+              "runners": [
+                
+                {
+                  "runnerIdx": "1",
+                   "runnerName": "FUTURE FREQUENCY",
+                  "runnerLane": "4",
+                  "runnerJockey": "R CURATOLO",
+                  "runnerStable": "GUJADHUR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+                {
+                  "runnerIdx": "2",
+                   "runnerName": "IDITAROD TRAIL",
+                  "runnerLane": "2",
+                  "runnerJockey": "P C ORFFER",
+                  "runnerStable": "SHIRISH NARANG",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+                {
+                  "runnerIdx": "3",
+                   "runnerName": "FINE ONE",
+                  "runnerLane": "5",
+                  "runnerJockey": "E CHAVES",
+                  "runnerStable": "A NAGADOO",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				
+				{
+                  "runnerIdx": "4",
+                   "runnerName": "JET BLACKFIRE",
+                  "runnerLane": "3",
+                  "runnerJockey": "D SCHWARZ",
+                  "runnerStable": "V RUHEE",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				
+				{
+                  "runnerIdx": "5",
+                   "runnerName": "PIETER BOTH",
+                  "runnerLane": "1",
+                  "runnerJockey": "B SOOFUL",
+                  "runnerStable": "C DABY",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                }
+				
+				
+				
+              ]
+            },
+            {
+              "raceNum": "4",
+              "raceTitle": "The KMK2 Trophy",
+              "raceDistance": "1650",
+              "raceDate": "20261114",
+              "raceTime": "1450",
+              "raceDT": "2026-11-14 14:50",
+              "raceStatus": "OPEN",
+              "raceNumOfRunners": 5,
+              "runners": [
+                {
+                  "runnerIdx": "1",
+                  "runnerName": "CANFORD CLUB",
+                  "runnerLane": "2",
+                  "runnerJockey": "E CHAVES",
+                  "runnerStable": "A NAGADOO",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+               
+                
+                {
+                  "runnerIdx": "2",
+                  "runnerName": "WUGUG",
+                  "runnerLane": "1",
+                  "runnerJockey": "B SOOFUL",
+                  "runnerStable": "GUJADHUR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+                {
+                  "runnerIdx": "3",
+                 "runnerName": "FLAG CHAMP",
+                  "runnerLane": "5",
+                  "runnerJockey": "D SCHWARZ",
+                  "runnerStable": "V RUHEE",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				
+				
+				
+				
+				{
+                  "runnerIdx": "4",
+                   "runnerName": "FEAR OF FIRE",
+                  "runnerLane": "4",
+                  "runnerJockey": "M NUNES",
+                  "runnerStable": "C HEWITSON",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "5",
+                   "runnerName": "QUANTIFIER",
+                  "runnerLane": "3",
+                  "runnerJockey": "I TAKA",
+                  "runnerStable": "A SEWDYAL",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                }
+				
+				
+              ]
+            },
+            {
+              "raceNum": "5",
+              "raceTitle": "The Kistnah Ramalingum Memorial Cup",
+              "raceDistance": "1365",
+              "raceDate": "20261114",
+              "raceTime": "1525",
+              "raceDT": "2026-11-14 15:25",
+              "raceStatus": "OPEN",
+              "raceNumOfRunners": 7,
+              "runners": [
+                {
+                  "runnerIdx": "1",
+                  "runnerName": "DARING DASH",
+                  "runnerLane": "6",
+                  "runnerJockey": "M MJOKA",
+                  "runnerStable": "SM MAHADIA",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+                {
+                  "runnerIdx": "2",
+                  "runnerName": "WAR CHARIOT",
+                  "runnerLane": "1",
+                  "runnerJockey": "E CHAVES",
+                  "runnerStable": "A NAGADOO",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+           
+               
+				{
+                  "runnerIdx": "3",
+                  "runnerName": "CAPTAIN ARROW",
+                  "runnerLane": "5",
+                  "runnerJockey": "I TAKA",
+                  "runnerStable": "A NAGADOO",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				
+				
+				{
+                  "runnerIdx": "4",
+                  "runnerName": "SALT N PEPPA",
+                  "runnerLane": "3",
+                  "runnerJockey": "M NUNES",
+                  "runnerStable": "C HEWITSON",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "5",
+                  "runnerName": "TWENTY ONE MAY",
+                  "runnerLane": "4",
+                  "runnerJockey": "D BHEEKARY",
+                  "runnerStable": "V ALLET",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "6",
+                  "runnerName": "UNITED PRINCE",
+                  "runnerLane": "2",
+                  "runnerJockey": "D SCHWARZ",
+                  "runnerStable": "V RUHEE",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "7",
+                  "runnerName": "GRAND BAY",
+                  "runnerLane": "7",
+                  "runnerJockey": "R CURATOLO",
+                  "runnerStable": "GUJADHUR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                }
+				
+				
+              ]
+            },
+            {
+              "raceNum": "6",
+              "raceTitle": "The Cathan Family Trophy",
+              "raceDistance": "1850",
+              "raceDate": "20261114",
+              "raceTime": "1605",
+              "raceDT": "2026-11-14 16:05",
+              "raceStatus": "OPEN",
+              "raceNumOfRunners": 7,
+              "runners": [
+                {
+                  "runnerIdx": "1",
+                  "runnerName": "NINETY NINE HEROS",
+                  "runnerLane": "2",
+                  "runnerJockey": "M MJOKA",
+                  "runnerStable": "SM MAHADIA",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+                {
+                  "runnerIdx": "2",
+                  "runnerName": "EXALTED LOVE",
+                  "runnerLane": "3",
+                  "runnerJockey": "R JOORAWON",
+                  "runnerStable": "J AWOTAR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+                {
+                  "runnerIdx": "3",
+                   "runnerName": "VIEW OF THE WORLD",
+                  "runnerLane": "1",
+                  "runnerJockey": "R CURATOLO",
+                  "runnerStable": "GUJADHUR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+                
+                
+				{
+                  "runnerIdx": "4",
+                  "runnerName": "LETS PLAY POKER",
+                  "runnerLane": "5",
+                  "runnerJockey": "R K CHUMUN",
+                  "runnerStable": "J AWOTAR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "5",
+                  "runnerName": "ALL ABOUT LOVE",
+                  "runnerLane": "4",
+                  "runnerJockey": "M SONARAM",
+                  "runnerStable": "R GUJADHUR",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "6",
+                  "runnerName": "ZACATOO",
+                  "runnerLane": "7",
+                  "runnerJockey": "E CHAVES",
+                  "runnerStable": "A NAGADOO",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                },
+				{
+                  "runnerIdx": "7",
+                  "runnerName": "GRANDE ROSALIE",
+                  "runnerLane": "6",
+                  "runnerJockey": "B SOOFUL",
+                  "runnerStable": "C DABY",
+                  "runnerOwner": "",
+                  "runnerStatus": "OPEN",
+                  "odds": {
+                    "Win": 9999,
+                    "Place": 9999
+                  }
+                }
+				
+				
+              ]
+            }
+            
+           
+          ]
+        }
+      ]
+    }
+  }
+}

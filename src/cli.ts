@@ -6,6 +6,7 @@ import { parseArgs } from "node:util";
 import { fetchRawPages } from "./browser.ts";
 import { ENGINES, isEngine } from "./engines.ts";
 import { isChallenge } from "./challenge.ts";
+import { toProgram, type ScrapedRace } from "./format.ts";
 import { URLS } from "./lib.ts";
 import { parseRace } from "./parse.ts";
 
@@ -35,7 +36,7 @@ const fromFile = values.file
 const urls = [...new Set([...positionals, ...fromFile])];
 if (!urls.length) urls.push(...URLS); // no args: scrape the URLS list from lib.ts
 
-const races = [];
+const races: ScrapedRace[] = [];
 const failures: string[] = [];
 for (const result of await fetchRawPages(urls, values.engine, { licenseKey: values["license-key"] })) {
   try {
@@ -47,10 +48,15 @@ for (const result of await fetchRawPages(urls, values.engine, { licenseKey: valu
   }
 }
 
-const json = JSON.stringify(races, null, 2);
+for (const f of failures) console.error(`FAILED ${f}`);
+if (!races.length) {
+  console.error("No race scraped, nothing written.");
+  process.exit(1);
+}
+
+const json = JSON.stringify(toProgram(races), null, 2);
 console.log(json);
 await mkdir(dirname(values.output), { recursive: true });
 await writeFile(values.output, `${json}\n`, "utf8");
 console.error(`Saved ${races.length}/${urls.length} races to ${values.output}`);
-for (const f of failures) console.error(`FAILED ${f}`);
 process.exitCode = failures.length ? 1 : 0;
